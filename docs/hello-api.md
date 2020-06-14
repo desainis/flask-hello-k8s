@@ -16,9 +16,7 @@
 `https://some-real-url.com/v1/`
 
 #### Versioning
-The API is versioned to support the different infrastructure providers that are available for you to create clusters. All /v1 APIs can be used to work only with IBM Cloud classic infrastructure. To work with a cluster that was provisioned on IBM Virtual Private Cloud (VPC) infrastructure, you must use the /v2 API.
-
-For information about the API versions, see About the API.
+The API is versioned to support the different infrastructure providers that are available for you to create clusters.
 
 #### Error handling
 This API uses standard HTTP response codes to indicate whether a method completed successfully. A 200 response indicates success. A 400 type response is some sort of failure, and a 500 type response usually indicates an internal system error. (_Note:_ Not every HTTP status code is used)
