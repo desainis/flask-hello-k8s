@@ -20,19 +20,17 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 5000
   targetPort: 5000
 
 ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: "true"
+    kubernetes.io/tls-acme: "false"
   hosts:
-    - host: will.flask-api.com
-      paths: [/will]
-    - host: ready.flask-api.com
-      paths: [/ready]
+    - host: api.hello.com # random example paths
+      paths: [/]
   tls: []
 
 resources: {}
