@@ -1,1 +1,1 @@
-docker build -t hello-flask .
+docker build -t desainis/hello-flask:latest .

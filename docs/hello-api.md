@@ -1,13 +1,19 @@
 #### Introduction
 
+- This guide provides an overview of how to use the `hello` API. 
+
 #### Before you begin
+
+- Ensure you have an instance of the hello api either running locally or on a kubernetes cluster somewhere. 
 
 #### Authorization
 
-#### API endpoint
-Use the following API endpoint for all of your API requests:
+- This API does not require authorization as it does not expose anything but simple text that have no real meaning :-) 
 
-https://some-real-url.com/v1/
+#### API endpoint
+- Use the following API endpoint for all of your API requests:
+
+`https://some-real-url.com/v1/`
 
 #### Versioning
 The API is versioned to support the different infrastructure providers that are available for you to create clusters. All /v1 APIs can be used to work only with IBM Cloud classic infrastructure. To work with a cluster that was provisioned on IBM Virtual Private Cloud (VPC) infrastructure, you must use the /v2 API.

@@ -1,0 +1,44 @@
+# Default values for flask-chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1 # example count
+
+image:
+  repository: desainis/hello-flask
+  pullPolicy: IfNotPresent
+  tag: "latest" # optionally insert a SHA
+
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: will.flask-api.com
+      paths: [/will]
+    - host: ready.flask-api.com
+      paths: [/ready]
+  tls: []
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

@@ -33,6 +33,7 @@ ___
 ```
 
 ___
+
 # Flask Hello World in K8s
 A simple RESTful api written using Flask with a simple path to production deployment. 
 
@@ -42,7 +43,7 @@ See [api specification](docs/hello-api.md) for further details.
 
 ## Steps
 
-You can deploy this application to your Kubernetes cluster by cloning this repo first and using the helm chart provided in `/helm` to deploy this simple rest api to your kubernetes cluster. After your app is live, you can access the `/health` endpoint to ensure the api is healthy. 
+You can deploy this application to your Kubernetes cluster by cloning this repo first and using the helm chart provided in `/hello-workflow` to deploy this simple rest api to your kubernetes cluster. After your app is live, you can access the `/health` endpoint to ensure the api is healthy. 
 
 ### Deploying to Kubernetes cluster
 
@@ -68,6 +69,35 @@ python3 -m unittest tests/*.py
 6. Use the `run.sh` to run a local docker container based on the image in step 4. (Optionally use your own)
 
 _Note:_ All test cases should be included in the `tests/` folder.
+
+7. Once your testing is complete, push the docker image to your favorite container registry. 
+
+8. Edit the container image value in the helm chart and deploy your this application to your kubernetes cluster.
+
+9. Test the helm deployment locally on minikube using:
+
+```bash
+helm install <release-name> ./flask-chart
+```
+
+You should now see the following pods, services and deployments:
+
+```
+11:00:58 PM flask-hello-k8s on 🚀 master [!?] on 🐳 v19.03.8 
+➜  kubectl get all
+NAME                                           READY   STATUS    RESTARTS   AGE
+pod/hello-flask-flask-chart-7994d796d8-dqcrj   1/1     Running   0          13m
+
+NAME                              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+service/hello-flask-flask-chart   ClusterIP   10.109.170.75   <none>        80/TCP    13m
+service/kubernetes                ClusterIP   10.96.0.1       <none>        443/TCP   3h46m
+
+NAME                                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/hello-flask-flask-chart   1/1     1            1           13m
+
+NAME                                                 DESIRED   CURRENT   READY   AGE
+replicaset.apps/hello-flask-flask-chart-7994d796d8   1         1         1       13m
+```
 
 ## License
 

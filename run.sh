@@ -1,1 +1,1 @@
-docker run -d -p 5000:5000 hello-flask
+docker run -d -p 5000:5000 desainis/hello-flask:latest
