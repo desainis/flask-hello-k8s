@@ -43,7 +43,7 @@ See [api specification](docs/hello-api.md) for further details.
 
 ## Steps
 
-You can deploy this application to your Kubernetes cluster by cloning this repo first and using the helm chart provided in `/hello-workflow` to deploy this simple rest api to your kubernetes cluster. After your app is live, you can access the `/health` endpoint to ensure the api is healthy. 
+You can deploy this application to your Kubernetes cluster by cloning this repo first and using the helm chart provided in `/flask-chart` to deploy this simple rest api to your kubernetes cluster. After your app is live, you can access the `/health` endpoint to ensure the api is healthy. 
 
 ### Deploying to Kubernetes cluster
 
