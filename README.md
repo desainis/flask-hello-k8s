@@ -80,23 +80,23 @@ _Note:_ All test cases should be included in the `tests/` folder.
 helm install <release-name> ./flask-chart
 ```
 
-You should now see the following pods, services and deployments:
+You should now see the following pods, services and deployments (_Note_: the helm release name here is "hello-api")
 
 ```
 11:00:58 PM flask-hello-k8s on 🚀 master [!?] on 🐳 v19.03.8 
 ➜  kubectl get all
 NAME                                           READY   STATUS    RESTARTS   AGE
-pod/hello-flask-flask-chart-7994d796d8-dqcrj   1/1     Running   0          13m
+pod/hello-api-flask-chart-7994d796d8-dqcrj   1/1     Running   0          13m
 
 NAME                              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
-service/hello-flask-flask-chart   ClusterIP   10.109.170.75   <none>        80/TCP    13m
+service/hello-api-flask-chart   ClusterIP   10.109.170.75   <none>        80/TCP    13m
 service/kubernetes                ClusterIP   10.96.0.1       <none>        443/TCP   3h46m
 
 NAME                                      READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/hello-flask-flask-chart   1/1     1            1           13m
+deployment.apps/hello-api-flask-chart   1/1     1            1           13m
 
 NAME                                                 DESIRED   CURRENT   READY   AGE
-replicaset.apps/hello-flask-flask-chart-7994d796d8   1         1         1       13m
+replicaset.apps/hello-api-flask-chart-7994d796d8   1         1         1       13m
 ```
 
 ## License
