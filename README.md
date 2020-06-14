@@ -99,6 +99,17 @@ NAME                                                 DESIRED   CURRENT   READY  
 replicaset.apps/hello-api-flask-chart-7994d796d8   1         1         1       13m
 ```
 
+10. Use the Helm NOTES.txt as a reference for how to access the API. 
+
+```
+NOTES:
+1. Get the application URL by running these commands:
+  echo "$(minikube ip) api.hello.com" | sudo tee -a /etc/hosts
+  http://api.hello.com/will
+  http://api.hello.com/ready
+  http://api.hello.com/health
+```
+
 ## License
 
 This sample application is licensed under the MIT License. 
